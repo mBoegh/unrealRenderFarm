@@ -20,8 +20,8 @@ MODULE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 # render worker specific configuration
 WORKER_NAME = 'RENDER_MACHINE_01'
-UNREAL_EXE = r'E:\Epic\UE_5.0\Engine\Binaries\Win64\UnrealEditor.exe'
-UNREAL_PROJECT = r"E:\Epic\UnrealProjects\SequencerTest\SequencerTest.uproject"
+UNREAL_EXE = r'D:\EpicLibrary\UE_5.3\Engine\Binaries\Win64\UnrealEditor.exe'
+UNREAL_PROJECT = r"C:\Users\Bøgh\Documents\Unreal Projects\MyProject\MyProject.uproject"
 
 
 def render(uid, umap_path, useq_path, uconfig_path):

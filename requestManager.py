@@ -23,7 +23,7 @@ LOGGER = logging.getLogger(__name__)
 
 # region HTTP REST API
 app = Flask(__name__)
-FLASK_EXE = r'E:\Epic\UE_5.0\Engine\Binaries\ThirdParty\Python3\Win64\Scripts\flask.exe'
+FLASK_EXE = r'C:\Users\Bøgh\AppData\Local\Programs\Python\Python311\Scripts\flask.exe'
 
 
 @app.route('/')
@@ -150,7 +150,12 @@ if __name__ == '__main__':
     import os
 
     env = os.environ.copy()
-    env['PYTHONPATH'] += os.pathsep + MODULE_PATH
+
+    # Add your module path to PYTHONPATH
+    if 'PYTHONPATH' in env:
+        env['PYTHONPATH'] += os.pathsep + MODULE_PATH
+    else:
+        env['PYTHONPATH'] = MODULE_PATH
 
     command = [
         FLASK_EXE,
@@ -166,3 +171,4 @@ if __name__ == '__main__':
 
     proc = subprocess.Popen(command, env=env)
     LOGGER.info(proc.communicate())
+
