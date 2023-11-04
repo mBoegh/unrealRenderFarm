@@ -26,17 +26,17 @@ if __name__ == '__main__':
     test_job_a = {
         'name': 'street_seq01',
         'owner': 'TEST_SUBMITTER_01',
-        'umap_path': '/Game/Cinematics/Street/Level_Cin_Street.Level_Cin_Street',
-        'useq_path': '/Game/Cinematics/Street/Shots/Shot01/LS_Shot_Street_Shot01.LS_Shot_Street_Shot01',
-        'uconfig_path': '/Game/Cinematics/Preset/Test.Test'
+        'unreal_map_path': '/Game/Cinematics/Street/Level_Cin_Street.Level_Cin_Street',
+        'unreal_sequence_path': '/Game/Cinematics/Street/Shots/Shot01/LS_Shot_Street_Shot01.LS_Shot_Street_Shot01',
+        'unreal_config_path': '/Game/Cinematics/Preset/Test.Test'
     }
 
     test_job_b = {
         'name': 'street_seq02',
         'owner': 'TEST_SUBMITTER_01',
-        'umap_path': '/Game/Cinematics/Street/Level_Cin_Street.Level_Cin_Street',
-        'useq_path': '/Game/Cinematics/Street/Shots/Shot02/LS_Shot_Street_Shot02.LS_Shot_Street_Shot02',
-        'uconfig_path': '/Game/Cinematics/Preset/Test.Test'
+        'unreal_map_path': '/Game/Cinematics/Street/Level_Cin_Street.Level_Cin_Street',
+        'unreal_sequence_path': '/Game/Cinematics/Street/Shots/Shot02/LS_Shot_Street_Shot02.LS_Shot_Street_Shot02',
+        'unreal_config_path': '/Game/Cinematics/Preset/Test.Test'
     }
 
     for job in [test_job_a, test_job_b]:

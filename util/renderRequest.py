@@ -48,9 +48,9 @@ class RenderRequest(object):
             category='',
             tags=[],
             status='',
-            umap_path='',
-            useq_path='',
-            uconfig_path='',
+            unreal_map_path='',
+            unreal_sequence_path='',
+            unreal_config_path='',
             output_path='',
             width=0,
             height=0,
@@ -95,9 +95,9 @@ class RenderRequest(object):
         self.category = category
         self.tags = tags
         self.status = status or RenderStatus.unassigned
-        self.umap_path = umap_path
-        self.useq_path = useq_path
-        self.uconfig_path = uconfig_path
+        self.umap_path = unreal_map_path
+        self.useq_path = unreal_sequence_path
+        self.uconfig_path = unreal_config_path
         self.output_path = output_path
         self.width = width or 1280
         self.height = height or 720
