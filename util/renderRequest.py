@@ -48,9 +48,9 @@ class RenderRequest(object):
             category='',
             tags=[],
             status='',
-            unreal_map_path='',
-            unreal_sequence_path='',
-            unreal_config_path='',
+            umap_path='',
+            useq_path='',
+            uconfig_path='',
             output_path='',
             width=0,
             height=0,
@@ -95,9 +95,9 @@ class RenderRequest(object):
         self.category = category
         self.tags = tags
         self.status = status or RenderStatus.unassigned
-        self.umap_path = unreal_map_path
-        self.useq_path = unreal_sequence_path
-        self.uconfig_path = unreal_config_path
+        self.umap_path = umap_path
+        self.useq_path = useq_path
+        self.uconfig_path = uconfig_path
         self.output_path = output_path
         self.width = width or 1280
         self.height = height or 720
@@ -119,14 +119,23 @@ class RenderRequest(object):
         :param uid: int. unique id from database
         :return: RenderRequest. request object
         """
-        request_file = os.path.join(DATABASE, '{}.json'.format(uid))
-        with open(request_file, 'r') as fp:
-            try:
-                request_dict = json.load(fp)
-            except Exception as e:
-                LOGGER.error('Failed to load request object from db: %s', e)
-                return None
-        return cls.from_dict(request_dict)
+        count = 0
+        
+        while count < 10:
+            request_file = os.path.join(DATABASE, '{}.json'.format(uid))
+            with open(request_file, 'r', encoding='utf-8') as fp:
+                if not os.path.isfile(request_file):
+                    LOGGER.error(f'File not found / does not exist: "{request_file}"')
+                    return None
+                try:
+                    request_dict = json.load(fp)
+                except Exception as e:
+                    LOGGER.error('Failed to load request object from db: %s', e)
+                    LOGGER.info('Retrying...')
+                    count += 1
+                    continue
+
+            return cls.from_dict(request_dict)
 
     @classmethod
     def from_dict(cls, d):

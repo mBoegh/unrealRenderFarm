@@ -24,20 +24,20 @@ def send(d):
 
 if __name__ == '__main__':
     test_job_a = {
-        'name': 'street_seq01',
+        'name': 'MyProject',
         'owner': 'TEST_SUBMITTER_01',
-        'unreal_map_path': '/Game/Cinematics/Street/Level_Cin_Street.Level_Cin_Street',
-        'unreal_sequence_path': '/Game/Cinematics/Street/Shots/Shot01/LS_Shot_Street_Shot01.LS_Shot_Street_Shot01',
-        'unreal_config_path': '/Game/Cinematics/Preset/Test.Test'
+        'umap_path': '/Game/Main.Main',
+        'useq_path': '/Game/NewLevelSequence.NewLevelSequence',
+        'uconfig_path': '/Game/tempQue031123.tempQue031123'
     }
 
     test_job_b = {
         'name': 'street_seq02',
         'owner': 'TEST_SUBMITTER_01',
-        'unreal_map_path': '/Game/Cinematics/Street/Level_Cin_Street.Level_Cin_Street',
-        'unreal_sequence_path': '/Game/Cinematics/Street/Shots/Shot02/LS_Shot_Street_Shot02.LS_Shot_Street_Shot02',
-        'unreal_config_path': '/Game/Cinematics/Preset/Test.Test'
+        'umap_path': '/Game/Cinematics/Street/Level_Cin_Street.Level_Cin_Street',
+        'useq_path': '/Game/Cinematics/Street/Shots/Shot02/LS_Shot_Street_Shot02.LS_Shot_Street_Shot02',
+        'uconfig_path': '/Game/Cinematics/Preset/Test.Test'
     }
 
-    for job in [test_job_a, test_job_b]:
+    for job in [test_job_a]:
         send(job)
