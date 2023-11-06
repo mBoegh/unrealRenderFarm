@@ -7,7 +7,6 @@ import logging
 from util import client
 
 
-logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
 
