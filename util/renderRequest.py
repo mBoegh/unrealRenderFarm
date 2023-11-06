@@ -9,7 +9,7 @@ import os
 import json
 from datetime import datetime
 
-
+logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
 MODULE_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -169,6 +169,29 @@ class RenderRequest(object):
         end_frame = d.get('end_frame') or 0
         time_estimate = d.get('time_estimate') or ''
         progress = d.get('progress') or 0
+
+        LOGGER.debug(f"""@ Function 'from_dict' return values: \n
+            'uid = ' {uid}\n
+            'name' = {name}\n
+            'owner' = {owner}\n
+            'worker' = {worker}\n
+            'time_created' = {time_created}\n
+            'priority' = {priority}\n
+            'category' = {category}\n
+            'tags' = {tags}\n
+            'status' = {status}\n
+            'umap_path' = {umap_path}\n
+            'useq_path' = {useq_path}\n
+            'uconfig_path' = {uconfig_path}\n
+            'output_path' = {output_path}\n
+            'width' = {width}\n
+            'height' = {height}\n
+            'frame_rate' = {frame_rate}\n
+            'format' = {format}\n
+            'start_frame' = {start_frame}\n
+            'end_frame' = {end_frame}\n
+            'time_estimate' = {time_estimate}\n
+            'progress' = {progress}""")
 
         return cls(
             uid=uid,

@@ -11,6 +11,7 @@ logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
 
 
+
 def send(d):
     """
     Send/Submit a new render request
@@ -24,11 +25,12 @@ def send(d):
 
 if __name__ == '__main__':
     test_job_a = {
-        'name': 'MyProject',
+        'name': 'jobName',
         'owner': 'TEST_SUBMITTER_01',
         'umap_path': '/Game/Main.Main',
         'useq_path': '/Game/NewLevelSequence.NewLevelSequence',
-        'uconfig_path': '/Game/tempQue031123.tempQue031123'
+        'uconfig_path': '/Game/tempConfig061123.tempConfig061123',
+        'output_path': 'C:\\Users\\Bøgh\\Documents\\Projects\\unrealRenderFarm\\test_renders'
     }
 
     test_job_b = {
