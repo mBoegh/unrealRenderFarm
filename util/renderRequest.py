@@ -170,6 +170,7 @@ class RenderRequest(object):
         time_estimate = d.get('time_estimate') or ''
         progress = d.get('progress') or 0
 
+        '''
         LOGGER.debug(f"""@ Function 'from_dict' return values: \n
             'uid = ' {uid}\n
             'name' = {name}\n
@@ -192,7 +193,8 @@ class RenderRequest(object):
             'end_frame' = {end_frame}\n
             'time_estimate' = {time_estimate}\n
             'progress' = {progress}""")
-
+        '''
+            
         return cls(
             uid=uid,
             name=name,
